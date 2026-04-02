@@ -170,7 +170,7 @@
         }
         button.move {
             position: relative;
-            transition: transform 0.3s ease;
+            transition: transform 0.05s ease;
         }
     </style>
 </head>
@@ -221,8 +221,9 @@ function runAway(button) {
     if (direction === "up") y = -distance;
     if (direction === "down") y = distance;
 
+    button.style.transition = "none";
     button.style.transform = `translate(${x}px, ${y}px)`;
-    // document.getElementById("message").innerText = ` ${direction}. But I still love you.`;
+    document.getElementById("message").innerText = "";
     document.getElementById("sticker").classList.remove("show");
 }
 
